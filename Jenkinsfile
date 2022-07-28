@@ -1,21 +1,23 @@
- pipeline {
-   agent none   
-   stages { 
-     stage("Stage1") { 
-	   steps { 
-	     script { 
-		   bat "mvn clean install"
+pipeline {
+    agent any
+    stages {
+        stage('stage1') {
+            steps {
+                script{
+		bat "mvn clean install"
 		   echo "stage one completd"
-		 }
-	   } 
-	 }   
-	 stage("Stage2") { 
-	   steps { 
-	     script { 
-		   bat "mvn clean install"
+                }
+            }
+        }
+	 stage('stage2') {
+            steps {
+                script{
+			bat "mvn clean install"
 		   echo "stage 2 completed"
-		 }
-	   } 
-	 }
-   } 
- }
+                }
+            }
+        }
+    }
+}
+
+
